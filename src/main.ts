@@ -44,8 +44,17 @@ function obtenirAcudit() {
         .catch(error => {
             // Manejo de los errores, si los hay
             console.error(error);
+        })
+        
+        .then(() => {
+            // Llamar a borrarValoracio al final
+            borrarValoracio();
         });
+
     });
+    
+
+    
 }
 
 function mostrarAcudit(resultado: any) {
@@ -55,8 +64,19 @@ function mostrarAcudit(resultado: any) {
 
     // Verifico si el elemento existe antes de agregar el evento, para evitar el error (is possibly 'null')
     if(mostraAcuditSal) {
-        mostraAcuditSal.innerHTML = resultado.joke;
+        mostraAcuditSal.innerText = resultado.joke;
     }
 }
 // Llamo a obtenirAcudit al cargar la página para obtener y mostrar un chiste inicial
 obtenirAcudit().catch(error => console.error(error));
+
+
+function borrarValoracio() {
+
+    const valoracioSal: HTMLElement | null = document.getElementById("valoracioSal");
+
+    if(valoracioSal) {
+        valoracioSal.innerHTML = "";
+    }
+    
+}

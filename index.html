@@ -25,11 +25,44 @@
                 </button>
             </div>
         </main>
+        
+        <form class="valora">
+            <h4>Vols valorar aquest acudit?</h4>
+            <ul>
+                <li>
+                    <input type="radio" name="valoracio" id="caraTriste" value=1 />
+                    <label for="caraTriste">
+                    <a href="#" id="btnCaraTriste">&#128530;</a>    
+                    </label> 
+                </li>
+        
+                <li>
+                    <input type="radio" name="valoracio" id="caraNeutra" value=2 />
+                    <label for="caraNeutra">
+                    <a href="#" id="btnCaraNeutra">&#128528;</a>
+                    </label>         
+                </li>
+        
+                <li>
+                    <input type="radio" name="valoracio" id="caraFeliz" value=3 />
+                    <label for="caraFeliz">
+                    <a href="#" id="btnCaraFeliz">&#128539;</a> 
+                    </label>        
+                </li>
+        
+            </ul>
+            <p id="valoracioSal">
+            </p>   
+            </form>
     </div>
     
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="./scripts/tracking.js"></script>
     <script src="./scripts/main.js"></script>
+    <!-- <script src="./scripts/acudit_class.js"></script> -->
+    
+
 </body>
 </html>

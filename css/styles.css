@@ -30,8 +30,8 @@ main#contenido {
     box-shadow: var(--box-shadow);
     background-image: url("../img/pulgoso.png");
     background-repeat: no-repeat;
-    background-position: 75% 94%;
-    background-size: 25%;
+    --background-position: 75% 94%;
+    --background-size: 25%;
 }
 
 h1 {
@@ -61,6 +61,64 @@ button#nouAcudit:hover {
     box-shadow: 5px 5px 10px #a55d077a;
 }
 
+.valora h4 {
+    color: #a55d07;
+    padding: 10px;
+    background-color: #ffffff91;
+    width: 60%;
+    margin: 0 auto 10px auto;
+    border-radius: 24px;
+}
+
+.valora {
+    text-align: center;
+}
+
+.valora p {
+    margin-top: 1em;
+}
+
+.valora input[type="radio"] {
+
+    visibility: hidden;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 100px;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    font-size: 48px;
+    margin-left: -30px;
+}
+
+li {
+    text-decoration: none;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    transform: scale(150%);
+
+}
+
+.destaca {
+    font-size: 130%;
+    font-weight: bold;
+    color: #a55d07;
+}
+
+
+
 @media screen and (min-width: 480px) {
     div#contenedor {
         min-width: 320px;
@@ -69,7 +127,7 @@ button#nouAcudit:hover {
 
     main#contenido {       
         max-height: 80%;
-        background-position: 84% 94%;
+        background-position: 75% 94%;
         background-size: 30%;
     }
 
@@ -86,7 +144,7 @@ button#nouAcudit:hover {
 
     main#contenido {
         max-height: 80%;
-        background-position: 75% 94%;
+        background-position: 70% 94%;
         background-size: 35%;
     }
 
