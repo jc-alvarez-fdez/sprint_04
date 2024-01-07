@@ -16,20 +16,24 @@ if (nouAcuditBtn) {
 // Genero un número aleatorio entre 1 y 10. Si es un número par ejecuto la Api01, en caso contrario ejecuto la Api02
 
 function obtenirAcudit() {
-
     const aleatori: number = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
     console.log("Num. aleatori= ", aleatori);
 
+    let apiPromise: Promise<any>;
+
     if (aleatori % 2 === 0) {
-
-        obtenirAcuditApi01();
-    }
-    else {
-
-        obtenirAcuditApi02();
+        apiPromise = obtenirAcuditApi01();
+    } else {
+        apiPromise = obtenirAcuditApi02();
     }
 
-    canviarColors();
+    apiPromise
+        .then(() => {
+            // Llamar a borrarValoracio y a los cambios de fondo y color al final
+            borrarValoracio();
+            canviarFons();
+            alternarColor();
+        });
 }
 
 
@@ -76,8 +80,9 @@ function obtenirAcuditApi01() {
         })
         
         .then(() => {
-            // Llamar a borrarValoracio al final
+            // Llamar a borrarValoracio
             borrarValoracio();
+
         });
 
     });
@@ -140,8 +145,8 @@ function obtenirAcuditApi02() {
         })
         
         .then(() => {
-            // Llamar a borrarValoracio al final
-            borrarValoracio();
+             // Llamar a borrarValoracio y a los cambios de fondo y color al final
+             borrarValoracio();
         });
 
     });
@@ -164,15 +169,44 @@ function mostrarAcuditApi02(resultado02: any) {
 // _________________________
 // Cambio de colores
 
-function canviarColors() {
-    const canviSvg01: HTMLElement | null = document.querySelector("#contenedor");
-    const canviSvg02: HTMLElement | null = document.querySelector("#contenido");
+function canviarFons() {
+    const canviSvg01: HTMLElement | null = document.querySelector("#contenido");
+    const canviSvg02: HTMLElement | null = document.querySelector("#preparat");
 
-    if (canviSvg01?.getElementsByClassName("svgFondo01")) {
-        
+    if (canviSvg01 && canviSvg02) {
+        // Toggle entre las clases para cambiar el fondo
+        canviSvg01.classList.toggle("svg01_fondo01");
+        canviSvg01.classList.toggle("svg01_fondo02");
+
+        canviSvg02.classList.toggle("svg02_fondo01");
+        canviSvg02.classList.toggle("svg02_fondo02");
     }
-
 }
+
+function alternarColor() {
+    // Accede al elemento raíz del documento (root)
+    const rootElement = document.documentElement;
+
+    // Obtén el valor actual de --color01
+    const colorActual = getComputedStyle(rootElement).getPropertyValue('--color01').trim();
+
+    // Define los colores alternativos
+    const colorAlterna01 = '#a55d07';
+    const colorAlterna02 = '#896BB2';
+
+    // Verifica el valor actual y alterna entre los colores alternativos
+    const nuevoColor = (colorActual === colorAlterna01) ? colorAlterna02 : colorAlterna01;
+
+    // Cambia el valor de --color01 al color alternativo
+    rootElement.style.setProperty('--color01', nuevoColor);
+
+    // Imprime en la consola el nuevo valor después de cambiarlo
+    console.log('Nuevo color:', nuevoColor);
+}
+
+
+
+
 
 
 

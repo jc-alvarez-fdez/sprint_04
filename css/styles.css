@@ -36,7 +36,6 @@ main#contenido {
     align-content: center;
     max-height: 80%;
     margin: 0 auto;
-    border:solid green
 }
 
 h1 {
@@ -51,7 +50,6 @@ p#mostraAcudit {
     color: white;
     margin: 0;
     padding: 0% 5% 5% 5%;
-    border: solid;
     margin: 1.5em 0 4em 1.8em;
     font-size: 1.2em;
 }
@@ -70,6 +68,8 @@ button#nouAcudit:hover {
 }
 
 .valora h4 {
+    font-size: 18px;
+    font-weight: bold;
     color: var(--color01);
     padding: 10px;
     background-color: #ffffff;
@@ -154,7 +154,6 @@ div#fondoSvg {
     width: 100%;
     z-index: -1;
     margin: 0 auto;
-    border:solid red;
 }
 
 .svg01_fondo01 {
@@ -220,12 +219,11 @@ div#fondoSvg {
     }
 
     main#contenido {
-        max-height: 80%;
-        max-width: 60%;
+      max-width: 663px;
     }
 
     p#mostraAcudit {
-        margin: 3em;
+        margin: 1em;
         font-size: 1.6em;
     }
 
@@ -236,11 +234,19 @@ div#fondoSvg {
     div#fondoSvg {
         height: 75%;
         background-size: 709px;
-        background-position: 54% 61%;
+        background-position: 49% 33%;
     }
 
+    .valora {
+        max-width: 60%;
+        margin: 0 auto;
+    }
     .valora h4 {
         margin-bottom: 55px;
+    }
+
+    .valora button {
+        width: 60%;
     }
 
     .svg01_fondo01 {
