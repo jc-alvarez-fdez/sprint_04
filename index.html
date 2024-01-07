@@ -14,47 +14,42 @@
     <header class="container-fluid">
         <div id="mostraTemps">El temps d'avui</div>
     </header>
-    <div id="contenedor" class="container">   
-
-        <main id="contenido" class="row">
-            <h1>Preparat per riure?</h1>
+    <div id="contenedor" class="container-fluid">   
+        <h1 class="svg02_fondo02">Preparat per riure?</h1>
+        <main id="contenido">
             <div class="column text-center">
                 <p id="mostraAcudit" class="card-body"></p>
-                <button type="button" id="nouAcudit" class="btn">
-                    Següent acudit
-                </button>
             </div>
+            <div class="valora">
+                <h4>Vols valorar aquest acudit?</h4>
+                <ul>
+                    <li>    
+                        <a href="#" id="btnCaraTriste"><img src="./img/cara01.svg" alt="Cara 1 de 3 puntos"></a>    
+                    </li>
+            
+                    <li>
+                        <a href="#" id="btnCaraNeutra"><img src="./img/cara02.svg" alt="Cara 2 de 3 puntos"></a>
+                    </li>
+            
+                    <li>
+                        <a href="#" id="btnCaraFeliz"><img src="./img/cara03.svg" alt="Cara 3 de 3 puntos"></a>   
+                    </li>
+            
+                </ul>
+                <p id="valoracioSal">
+                </p>   
+            </div>
+
+            <button type="button" id="nouAcudit" class="btn">
+                Següent acudit
+            </button>
+
         </main>
-        
-        <form class="valora">
-            <h4>Vols valorar aquest acudit?</h4>
-            <ul>
-                <li>
-                    <input type="radio" name="valoracio" id="caraTriste" value=1 />
-                    <label for="caraTriste">
-                    <a href="#" id="btnCaraTriste">&#128530;</a>    
-                    </label> 
-                </li>
-        
-                <li>
-                    <input type="radio" name="valoracio" id="caraNeutra" value=2 />
-                    <label for="caraNeutra">
-                    <a href="#" id="btnCaraNeutra">&#128528;</a>
-                    </label>         
-                </li>
-        
-                <li>
-                    <input type="radio" name="valoracio" id="caraFeliz" value=3 />
-                    <label for="caraFeliz">
-                    <a href="#" id="btnCaraFeliz">&#128539;</a> 
-                    </label>        
-                </li>
-        
-            </ul>
-            <p id="valoracioSal">
-            </p>   
-            </form>
+        <div id="fondoSvg" class="row svg01_fondo02"> 
+       
+        </div>
     </div>
+
     
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

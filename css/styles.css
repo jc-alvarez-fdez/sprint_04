@@ -1,18 +1,24 @@
+/*  Colores para alternar
+#a55d07;
+#896BB2;
+*/
+
+
 :root {
-    --color01: #a55d07;
-    --box-shadow: 10px 10px 20px #a55d077a;
+    --color01: #896BB2;
+    --box-shadow: 10px 10px 20px rgba(29, 29, 29, 0.188);
 }
 
 body {
-    background-color: bisque;
     font-family:  Verdana, 'Segoe UI', Tahoma, Geneva,sans-serif;
 }
 
 div#contenedor {
-    width: 100%;
-    background-color: bisque;
-    height: 100vh;
-
+    min-width: 320px;
+    max-width: 480px;
+    width: 100vw;
+    height: 85vh;
+    position:  relative;
 }
 
 header {
@@ -21,37 +27,38 @@ header {
 
 
 main#contenido {
-    background-color: rgb(251 244 229);
     padding: 5%;
     width: 85%;
     margin: 6% auto;
     display: flex;
-    align-items: center;
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
-    background-image: url("../img/pulgoso.png");
-    background-repeat: no-repeat;
-    --background-position: 75% 94%;
-    --background-size: 25%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    max-height: 80%;
+    margin: 0 auto;
+    border:solid green
 }
 
 h1 {
     font-size: calc(1.375rem + 1.5vw);
     color: var(--color01);
     text-align: center;
-    margin-top: 2em;
+    margin: .5em 1em 2em 1em;
 }
 
 p#mostraAcudit {
-    font-size: 1.5em;
-    color: rgb(52, 47, 41);
-    margin: 1.5em 0 3em 0;
+    font-size: 1.8em;
+    color: white;
+    margin: 0;
+    padding: 0% 5% 5% 5%;
+    border: solid;
+    margin: 1.5em 0 4em 1.8em;
+    font-size: 1.2em;
 }
 
 button#nouAcudit {
     background-color: var(--color01);
     color: white;
-    margin-right: 90px;
 }
 
 button#nouAcudit:hover {
@@ -59,16 +66,18 @@ button#nouAcudit:hover {
     color: var(--color01);
     border: 1px solid var(--color01);
     font-weight: bold;
-    box-shadow: 5px 5px 10px #a55d077a;
+    box-shadow: 5px 5px 10px #4545453d;
 }
 
 .valora h4 {
-    color: #a55d07;
+    color: var(--color01);
     padding: 10px;
-    background-color: #ffffff91;
-    width: 60%;
-    margin: 0 auto 10px auto;
+    background-color: #ffffff;
+    margin: 2em auto 10px auto;
     border-radius: 24px;
+    border: solid 2px var(--color01);
+    box-shadow: 0 -8px 0 white;
+    margin-bottom: 20px;
 }
 
 .valora {
@@ -79,25 +88,17 @@ button#nouAcudit:hover {
     margin-top: 1em;
 }
 
-.valora input[type="radio"] {
-
-    visibility: hidden;
-}
 
 ul {
     list-style-type: none;
     display: flex;
-    gap: 100px;
+    gap: 30px;
     justify-content: space-evenly;
     width: 300px;
     margin: 0 auto;
+    padding-left: 0;
 }
 
-a {
-    text-decoration: none;
-    font-size: 48px;
-    margin-left: -30px;
-}
 
 li {
     text-decoration: none;
@@ -107,21 +108,32 @@ li {
     align-items: center;
 }
 
-li:hover {
-    transform: scale(150%);
-
+li img {
+    width: 90px;
+}
+li img:hover {
+    transform: scale(125%) rotate(-30deg);
 }
 
 .destaca {
     font-size: 130%;
     font-weight: bold;
-    color: #a55d07;
+    color: var(--color01);
 }
 
 #mostraTemps {
     font-size: 1em;
     display: flex;
     color: var(--color01);
+    align-items: flex-end;
+    font-size: .9em;
+    padding: 0 0.5em;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    line-height: 0.7;
 }
 
 #mostraTemps a {
@@ -134,6 +146,43 @@ li:hover {
     font-weight: bold;
 }
 
+div#fondoSvg {
+    position: absolute;
+    top: 6%;
+    left: 0%;
+    height: 60%;
+    width: 100%;
+    z-index: -1;
+    margin: 0 auto;
+    border:solid red;
+}
+
+.svg01_fondo01 {
+   background-image: url(../img/fons_css/blob_896BB2_01.svg);
+   background-repeat: no-repeat;
+   background-size: 107%;
+   background-position: 45% 49%;
+}
+
+.svg02_fondo01 {
+    background-image: url(../img/fons_css/blob_896BB2_02.svg);
+    background-repeat: no-repeat;
+    background-size: 19%;
+    background-position: -6% 49%;
+ }
+ .svg01_fondo02 {
+    background-image: url(../img/fons_css/blob_a55d07_01.svg);
+    background-repeat: no-repeat;
+    background-size: 107%;
+    background-position: -36% 210%;
+ }
+ 
+ .svg02_fondo02 {
+     background-image: url(../img/fons_css/blob_a55d07_02.svg);
+     background-repeat: no-repeat;
+     background-size: 15%;
+     background-position: -2% 44%;
+  }
 
 @media screen and (min-width: 480px) {
     div#contenedor {
@@ -141,14 +190,14 @@ li:hover {
         max-width: 480px;
     }
 
-    main#contenido {       
+    main#contenido {
         max-height: 80%;
-        background-position: 75% 94%;
-        background-size: 30%;
+        margin: 0 auto;
     }
 
     p#mostraAcudit {
-        margin: 1.5em 0 4em;
+        margin: 1.5em 0 4em 1.8em;
+        font-size: 1.2em;
     }
 
     #mostraTemps {
@@ -166,51 +215,53 @@ li:hover {
 
 @media screen and (min-width: 768px) {
     div#contenedor {
-       max-width: 768px;
+        max-height: 90vh;
+        max-width: 768%;
     }
 
     main#contenido {
         max-height: 80%;
-        background-position: 70% 94%;
-        background-size: 35%;
+        max-width: 60%;
     }
 
     p#mostraAcudit {
-        margin: 1.5em 0 6em;
+        margin: 3em;
+        font-size: 1.6em;
     }
 
     button#nouAcudit {
-        margin-right: 160px;
         margin-bottom: 35px;
     }
 
+    div#fondoSvg {
+        height: 75%;
+        background-size: 709px;
+        background-position: 54% 61%;
+    }
+
+    .valora h4 {
+        margin-bottom: 55px;
+    }
+
+    .svg01_fondo01 {
+        background-size: 97%;
+        background-position: 49% 37%;
+     }
+
+     .svg01_fondo02 {
+        background-size: 105%;
+        background-position: 34% 78%;
+     }
+
+     .svg02_fondo01 {
+        background-size: 108px;
+        background-position: 12% 46%;
+     }
+
+     .svg02_fondo02 {
+        background-size: 7%;
+        background-position: 18% 41%;
+     }
+
 }
 
-@media screen and (min-width: 1200px) {
-    div#contenedor {
-       max-width: 1000px;
-    }
-
-    main#contenido {
-        max-height: 80%;
-        background-position: 130% 70%;
-        background-size: 50%;
-        padding-right: 30%;
-    }
-
-    p#mostraAcudit {
-        margin: 1.5em 0 6em;
-    }
-
-    button#nouAcudit {
-        margin-right: 0;
-        margin-bottom: 35px;
-        min-width: 20%;
-    }
-    
-    #mostraTemps {
-        font-size: 1em;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-}

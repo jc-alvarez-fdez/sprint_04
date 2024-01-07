@@ -2,3 +2,4 @@ node_modules/
 dist/
 0_probes/
 src/acudit_class.ts
+scripts/acudit_class.js
