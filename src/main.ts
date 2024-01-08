@@ -16,25 +16,22 @@ if (nouAcuditBtn) {
 // Genero un número aleatorio entre 1 y 10. Si es un número par ejecuto la Api01, en caso contrario ejecuto la Api02
 
 function obtenirAcudit() {
+
+    alternarColor();
+
     const aleatori: number = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
     console.log("Num. aleatori= ", aleatori);
 
-    let apiPromise: Promise<any>;
-
     if (aleatori % 2 === 0) {
-        apiPromise = obtenirAcuditApi01();
-    } else {
-        apiPromise = obtenirAcuditApi02();
-    }
 
-    apiPromise
-        .then(() => {
-            // Llamar a borrarValoracio y a los cambios de fondo y color al final
-            borrarValoracio();
-            canviarFons();
-            alternarColor();
-        });
+        obtenirAcuditApi01();
+    }
+    else {
+
+        obtenirAcuditApi02();
+    }
 }
+
 
 
 // __________________
@@ -184,24 +181,24 @@ function canviarFons() {
 }
 
 function alternarColor() {
-    // Accede al elemento raíz del documento (root)
+    // Accedo al elemento raíz del documento (root)
     const rootElement = document.documentElement;
 
-    // Obtén el valor actual de --color01
+    // Obtengo el valor actual de --color01
     const colorActual = getComputedStyle(rootElement).getPropertyValue('--color01').trim();
 
-    // Define los colores alternativos
+    // Defino los colores alternativos
     const colorAlterna01 = '#a55d07';
     const colorAlterna02 = '#896BB2';
 
-    // Verifica el valor actual y alterna entre los colores alternativos
+    // Verifico el valor actual y alterno entre los colores
     const nuevoColor = (colorActual === colorAlterna01) ? colorAlterna02 : colorAlterna01;
 
-    // Cambia el valor de --color01 al color alternativo
+    // Cambio el valor de --color01 al color alternativo
     rootElement.style.setProperty('--color01', nuevoColor);
 
-    // Imprime en la consola el nuevo valor después de cambiarlo
-    console.log('Nuevo color:', nuevoColor);
+    canviarFons();
+
 }
 
 

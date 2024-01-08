@@ -25,38 +25,39 @@ header {
     padding: 1em;
 }
 
-
 main#contenido {
-    padding: 5%;
-    width: 85%;
+    /* padding: 38px 20px 20px 20px; */
+    /* width: 100%; */
     margin: 6% auto;
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    align-content: center;
+    align-content: flex-start;
     max-height: 80%;
     margin: 0 auto;
+    align-items: center;
+    min-height: 436px;
 }
 
 h1 {
     font-size: calc(1.375rem + 1.5vw);
     color: var(--color01);
     text-align: center;
-    margin: .5em 1em 2em 1em;
+    margin: 10px 10px 30px 10px;
 }
 
 p#mostraAcudit {
-    font-size: 1.8em;
     color: white;
     margin: 0;
-    padding: 0% 5% 5% 5%;
-    margin: 1.5em 0 4em 1.8em;
-    font-size: 1.2em;
+    /* padding: 40px 60px 10px 60px; */
+    margin: 102px 45px 10px 45px;
+    font-size: 18px;
+    text-shadow: 2px 2px 0 var(--color01);
 }
 
 button#nouAcudit {
     background-color: var(--color01);
     color: white;
+    border: 2px solid white;
 }
 
 button#nouAcudit:hover {
@@ -73,21 +74,22 @@ button#nouAcudit:hover {
     color: var(--color01);
     padding: 10px;
     background-color: #ffffff;
-    margin: 2em auto 10px auto;
+    margin: 46px 10px 10px 10px;
     border-radius: 24px;
     border: solid 2px var(--color01);
-    box-shadow: 0 -8px 0 white;
+    box-shadow: 0 -4px 0 white;
     margin-bottom: 20px;
 }
 
 .valora {
     text-align: center;
+    margin-top: -35px;
 }
 
 .valora p {
+    font-size:16px;
     margin-top: 1em;
 }
-
 
 ul {
     list-style-type: none;
@@ -99,7 +101,6 @@ ul {
     padding-left: 0;
 }
 
-
 li {
     text-decoration: none;
     font-size: 48px;
@@ -109,14 +110,14 @@ li {
 }
 
 li img {
-    width: 90px;
+    width: 65px;
 }
 li img:hover {
     transform: scale(125%) rotate(-30deg);
 }
 
 .destaca {
-    font-size: 130%;
+    font-size: 120%;
     font-weight: bold;
     color: var(--color01);
 }
@@ -159,8 +160,8 @@ div#fondoSvg {
 .svg01_fondo01 {
    background-image: url(../img/fons_css/blob_896BB2_01.svg);
    background-repeat: no-repeat;
-   background-size: 107%;
-   background-position: 45% 49%;
+   background-size: 546px;
+   background-position: -56px -50px;
 }
 
 .svg02_fondo01 {
@@ -172,17 +173,17 @@ div#fondoSvg {
  .svg01_fondo02 {
     background-image: url(../img/fons_css/blob_a55d07_01.svg);
     background-repeat: no-repeat;
-    background-size: 107%;
-    background-position: -36% 210%;
+    background-size: 535px;
+    background-position: -33px -75px;
  }
  
  .svg02_fondo02 {
      background-image: url(../img/fons_css/blob_a55d07_02.svg);
      background-repeat: no-repeat;
-     background-size: 15%;
-     background-position: -2% 44%;
+     background-size: 53px;
+     background-position: 1% 44%;
   }
-
+/* 
 @media screen and (min-width: 480px) {
     div#contenedor {
         min-width: 320px;
@@ -195,8 +196,8 @@ div#fondoSvg {
     }
 
     p#mostraAcudit {
-        margin: 1.5em 0 4em 1.8em;
-        font-size: 1.2em;
+        margin: 10px 10px 85px 31px;
+        font-size: 16px;
     }
 
     #mostraTemps {
@@ -212,6 +213,8 @@ div#fondoSvg {
 
 }
 
+*/
+
 @media screen and (min-width: 768px) {
     div#contenedor {
         max-height: 90vh;
@@ -219,12 +222,18 @@ div#fondoSvg {
     }
 
     main#contenido {
-      max-width: 663px;
+      max-width: 730px;
+      height: 489px;
+    }
+
+    h1 {
+        font-size:30px
     }
 
     p#mostraAcudit {
-        margin: 1em;
-        font-size: 1.6em;
+        margin: 130px 150px 20px 150px;
+        font-size: 18px;
+        padding-bottom: 50px;
     }
 
     button#nouAcudit {
@@ -233,16 +242,16 @@ div#fondoSvg {
 
     div#fondoSvg {
         height: 75%;
-        background-size: 709px;
-        background-position: 49% 33%;
+        /* background-size: 709px;
+        background-position: 49% 33%; */
     }
 
     .valora {
-        max-width: 60%;
-        margin: 0 auto;
+        max-width: 400px;
+        margin: 24px auto 0 auto;
     }
     .valora h4 {
-        margin-bottom: 55px;
+        margin: 10px 10px 10px 10px;
     }
 
     .valora button {
@@ -250,24 +259,24 @@ div#fondoSvg {
     }
 
     .svg01_fondo01 {
-        background-size: 97%;
-        background-position: 49% 37%;
+        background-size: 608px;
+        background-position: 56px -55px;
      }
 
      .svg01_fondo02 {
-        background-size: 105%;
-        background-position: 34% 78%;
-     }
+        background-size: 636px;
+        background-position: 63% 68%;
+    }
 
      .svg02_fondo01 {
-        background-size: 108px;
-        background-position: 12% 46%;
+        background-size: 90px;
+        background-position: 25% 50%;
      }
 
      .svg02_fondo02 {
-        background-size: 7%;
-        background-position: 18% 41%;
-     }
+        background-size: 58px;
+        background-position: 31% 41%;
+    }
 
-}
+} 
 

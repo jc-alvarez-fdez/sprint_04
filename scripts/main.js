@@ -10,6 +10,7 @@ if (nouAcuditBtn) {
 // Escoger API
 // Genero un número aleatorio entre 1 y 10. Si es un número par ejecuto la Api01, en caso contrario ejecuto la Api02
 function obtenirAcudit() {
+    alternarColor();
     const aleatori = Math.floor(Math.random() * (9 - 3 + 1)) + 3;
     console.log("Num. aleatori= ", aleatori);
     if (aleatori % 2 === 0) {
@@ -18,7 +19,6 @@ function obtenirAcudit() {
     else {
         obtenirAcuditApi02();
     }
-    canviarColors();
 }
 // __________________
 // Api chistes 01 (https://icanhazdadjoke.com/)
@@ -54,7 +54,7 @@ function obtenirAcuditApi01() {
             console.error(error);
         })
             .then(() => {
-            // Llamar a borrarValoracio al final
+            // Llamar a borrarValoracio
             borrarValoracio();
         });
     });
@@ -100,7 +100,7 @@ function obtenirAcuditApi02() {
             console.error(error);
         })
             .then(() => {
-            // Llamar a borrarValoracio al final
+            // Llamar a borrarValoracio y a los cambios de fondo y color al final
             borrarValoracio();
         });
     });
@@ -114,11 +114,30 @@ function mostrarAcuditApi02(resultado02) {
 }
 // _________________________
 // Cambio de colores
-function canviarColors() {
-    const canviSvg01 = document.querySelector("#contenedor");
-    const canviSvg02 = document.querySelector("#contenido");
-    if (canviSvg01 === null || canviSvg01 === void 0 ? void 0 : canviSvg01.getElementsByClassName("svgFondo01")) {
+function canviarFons() {
+    const canviSvg01 = document.querySelector("#contenido");
+    const canviSvg02 = document.querySelector("#preparat");
+    if (canviSvg01 && canviSvg02) {
+        // Toggle entre las clases para cambiar el fondo
+        canviSvg01.classList.toggle("svg01_fondo01");
+        canviSvg01.classList.toggle("svg01_fondo02");
+        canviSvg02.classList.toggle("svg02_fondo01");
+        canviSvg02.classList.toggle("svg02_fondo02");
     }
+}
+function alternarColor() {
+    // Accedo al elemento raíz del documento (root)
+    const rootElement = document.documentElement;
+    // Obtengo el valor actual de --color01
+    const colorActual = getComputedStyle(rootElement).getPropertyValue('--color01').trim();
+    // Defino los colores alternativos
+    const colorAlterna01 = '#a55d07';
+    const colorAlterna02 = '#896BB2';
+    // Verifico el valor actual y alterno entre los colores
+    const nuevoColor = (colorActual === colorAlterna01) ? colorAlterna02 : colorAlterna01;
+    // Cambio el valor de --color01 al color alternativo
+    rootElement.style.setProperty('--color01', nuevoColor);
+    canviarFons();
 }
 // _________________________
 // Llamo a obtenirAcudit al cargar la página para obtener y mostrar un chiste inicial
