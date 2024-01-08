@@ -26,8 +26,6 @@ header {
 }
 
 main#contenido {
-    /* padding: 38px 20px 20px 20px; */
-    /* width: 100%; */
     margin: 6% auto;
     display: flex;
     justify-content: space-evenly;
@@ -48,7 +46,6 @@ h1 {
 p#mostraAcudit {
     color: white;
     margin: 0;
-    /* padding: 40px 60px 10px 60px; */
     margin: 102px 45px 10px 45px;
     font-size: 18px;
     text-shadow: 2px 2px 0 var(--color01);
@@ -183,37 +180,6 @@ div#fondoSvg {
      background-size: 53px;
      background-position: 1% 44%;
   }
-/* 
-@media screen and (min-width: 480px) {
-    div#contenedor {
-        min-width: 320px;
-        max-width: 480px;
-    }
-
-    main#contenido {
-        max-height: 80%;
-        margin: 0 auto;
-    }
-
-    p#mostraAcudit {
-        margin: 10px 10px 85px 31px;
-        font-size: 16px;
-    }
-
-    #mostraTemps {
-        font-size: .9em;
-        padding: 0 0.5em;
-        flex-wrap: wrap;
-        column-gap: 40px;
-        text-align: center;
-        align-content: center;
-        justify-content: center;
-        line-height: 0.7;
-    }
-
-}
-
-*/
 
 @media screen and (min-width: 768px) {
     div#contenedor {
@@ -242,8 +208,6 @@ div#fondoSvg {
 
     div#fondoSvg {
         height: 75%;
-        /* background-size: 709px;
-        background-position: 49% 33%; */
     }
 
     .valora {

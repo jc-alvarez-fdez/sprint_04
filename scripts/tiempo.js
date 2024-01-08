@@ -1,45 +1,29 @@
 "use strict";
-// La función "obtenirTemps()" devuelve una Promise con el pronóstico del tiempo
 function obtenirTemps() {
     return new Promise(function (resolve, reject) {
-        // Definir la URL de la API del tiempo
         const url = "https://www.el-tiempo.net/api/json/v2/provincias/08/municipios/08019";
-        // Realizo una solicitud Fetch a la API 
-        fetch(url, {
-        /*             headers: {
-                "Accept": "application/json"
-            } */
-        })
+        fetch(url)
             .then(respuesta => {
-            // Verifico la respuesta: exito = status code 200
             if (!respuesta.ok) {
                 throw new Error(`Error a la sol·licitud: ${respuesta.status}`);
             }
-            // Convierto la respuesta a formato JSON
             return respuesta.json();
         })
             .then(resultado => {
-            // Muestro el resultado en la consola
             console.log(resultado);
-            // Muestro el resultado en el html
             mostrarTemps(resultado);
-            // Resuelvo la "Promise" con el chiste
             resolve(resultado);
         })
             .catch(error => {
-            // Manejo de los errores, si los hay
             console.error(error);
         })
             .then(() => {
-            // Llamar a borrarValoracio al final
             borrarValoracio();
         });
     });
 }
 function mostrarTemps(resultado) {
     const mostraTempsSal = document.querySelector("#mostraTemps");
-    // La API utiliza la información de AEMET, por lo que las descripciones de estado de cielo se corresponden con las suyas
-    // Creo un objeto de mapeo que mapee las descripciones del estado del cielo a las rutas de las imágenes correspondientes
     const anchoImagen = "48px";
     const altoImagen = "48px";
     const mapeoEstadoCielo = {
@@ -95,14 +79,11 @@ function mostrarTemps(resultado) {
         "Bruma": { ruta: "./img/darksky/niebla.svg", ancho: anchoImagen, alto: altoImagen },
         "Calima": { ruta: "./img/darksky/niebla.svg", ancho: anchoImagen, alto: altoImagen },
     };
-    // Verifico si el elemento existe antes de agregar el evento, para evitar el error (is possibly 'null')
     if (mostraTempsSal) {
         let mensaje = "";
         mensaje += `<p>${resultado.fecha}</p>`;
-        // Obtengo la información de la imagen usando el mapeo
         const infoImagenEstadoCielo = mapeoEstadoCielo[resultado.stateSky.description] || { ruta: "./img/darksky/default.svg" };
         const { ruta, ancho, alto } = infoImagenEstadoCielo;
-        // Construyo la etiqueta de la imagen con las dimensiones
         mensaje += `<img src="${ruta}" alt="${resultado.stateSky.description}" style="width: ${ancho}; height: ${alto};">`;
         mensaje += `<p>${resultado.temperatura_actual} °C</p>`;
         mensaje += `<p>${resultado.humedad} % humitat</p>`;
@@ -112,4 +93,3 @@ function mostrarTemps(resultado) {
 }
 // Llamo a obtenirtemps al cargar la página para obtener y mostrar el tiempo al inicio
 obtenirTemps().catch(error => console.error(error));
-//Esto funciona

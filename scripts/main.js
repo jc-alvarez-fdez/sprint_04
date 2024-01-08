@@ -1,5 +1,4 @@
 "use strict";
-// Botón següent acudit
 const nouAcuditBtn = document.querySelector("#nouAcudit");
 // Verifico si el botón existe antes de agregar el evento, para evitar el error
 if (nouAcuditBtn) {
